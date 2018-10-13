@@ -87,7 +87,6 @@ public class ControllerAgenda {
      * Método para ver el primer registro de la tabla contactos
      */
     private void jbtn_primero_actionPerformed() {
-        System.out.println("Action del boton jbtn_primero");
          modelAgenda.moverPrimerRegistro();
         setValues();
     }
@@ -96,7 +95,6 @@ public class ControllerAgenda {
      * Método para ver el registro anterior de la tabla contactos.
      */
     private void jbtn_anterior_actionPerformed() {
-        System.out.println("Action del boton jbtn_anterior");
         modelAgenda.moverAnteriorRegistro();
         setValues();
     }
@@ -105,7 +103,6 @@ public class ControllerAgenda {
      * Método para ver el último registro de la tabla contactos.
      */
     private void jbtn_ultimo_actionPerformed() {
-        System.out.println("Action del boton jbtn_ultimo");
         modelAgenda.moverUltimoRegistro();
         setValues();
     }
@@ -114,7 +111,6 @@ public class ControllerAgenda {
      * Método para ver el siguiente registro de la tabla contactos.
      */
     private void jbtn_siguiente_actionPerformed() {
-        System.out.println("Action del boton jbtn_siguiente");
         modelAgenda.moverSiguienteRegistro();
         setValues();
     }

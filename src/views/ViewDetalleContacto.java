@@ -31,7 +31,7 @@ public class ViewDetalleContacto extends javax.swing.JPanel {
         jl_email = new javax.swing.JLabel();
         jl_telefono = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(51, 204, 255));
+        setBackground(new java.awt.Color(204, 204, 204));
 
         jl_nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl_nombre.setText("Nombre");

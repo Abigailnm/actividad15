@@ -38,7 +38,7 @@ public class ViewAgenda extends javax.swing.JPanel {
         jl_telefono = new javax.swing.JLabel();
         jtf_telefono = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(51, 204, 255));
+        setBackground(new java.awt.Color(204, 204, 204));
 
         jl_nombre.setText("Nombre");
 
