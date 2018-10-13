@@ -34,6 +34,14 @@ public class ControllerAgenda {
                 jbtn_siguiente_actionPerformed();
             } else if (e.getSource() == viewAgenda.jbtn_ultimo) {
                 jbtn_ultimo_actionPerformed();
+            }else if (e.getSource() == viewAgenda.jbtn_nuevo) {
+                jbtn_nuevo_actionPerformed();
+            }else if (e.getSource() == viewAgenda.jbtn_insertar) {
+                jbtn_insertar_actionPerformed();
+            }else if (e.getSource() == viewAgenda.jbtn_modificar) {
+                jbtn_modificar_actionPerformed();
+            }else if (e.getSource() == viewAgenda.jbtn_eliminar) {
+                jbtn_eliminar_actionPerformed();
             }
 
         }
@@ -81,6 +89,10 @@ public class ControllerAgenda {
         viewAgenda.jbtn_anterior.addActionListener(actionListener);
         viewAgenda.jbtn_siguiente.addActionListener(actionListener);
         viewAgenda.jbtn_ultimo.addActionListener(actionListener);
+        viewAgenda.jbtn_insertar.addActionListener(actionListener);
+        viewAgenda.jbtn_eliminar.addActionListener(actionListener);
+        viewAgenda.jbtn_modificar.addActionListener(actionListener);
+        viewAgenda.jbtn_nuevo.addActionListener(actionListener);
     }
 
     /**
@@ -122,5 +134,37 @@ public class ControllerAgenda {
         viewAgenda.jtf_nombre.setText(modelAgenda.getNombre());
         viewAgenda.jtf_email.setText(modelAgenda.getEmail());
         viewAgenda.jtf_telefono.setText(modelAgenda.getTelefono());
+    }
+   /**
+     * Método para preparar la interfaz para colocar un nuevo registro en la tabla contactos
+     */
+    public void jbtn_nuevo_actionPerformed() {
+        viewAgenda.jtf_nombre.setText(""); // vacea los campos
+        viewAgenda.jtf_email.setText("");
+        viewAgenda.jtf_telefono.setText("");
+    }
+    /**
+     * Elimina un registro de la tabla contactos
+     */
+    public void jbtn_eliminar_actionPerformed() {
+        modelAgenda.eliRegistro(); // Invoca metodo de eliminar 
+    }
+ /**
+     *Inserta registro en la tabla contactos
+     */
+    public void jbtn_insertar_actionPerformed() {
+        modelAgenda.setNombre(viewAgenda.jtf_nombre.getText()); // Da el valor de nombre a la variable .
+        modelAgenda.setEmail(viewAgenda.jtf_email.getText()); 
+        modelAgenda.setTelefono(viewAgenda.jtf_telefono.getText());
+        modelAgenda.insertarRegistro(); // Invoca  Insertar un nuevo registro.
+    }   
+    /**
+     * Método para modificar registros
+     */
+    public void jbtn_modificar_actionPerformed() {
+        modelAgenda.setNombre(viewAgenda.jtf_nombre.getText()); 
+        modelAgenda.setEmail(viewAgenda.jtf_email.getText()); 
+        modelAgenda.setTelefono(viewAgenda.jtf_telefono.getText());
+        modelAgenda.modiRegistro(); // Invoca metodo de modificar .
     }
 }

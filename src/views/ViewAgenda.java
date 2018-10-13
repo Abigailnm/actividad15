@@ -37,6 +37,10 @@ public class ViewAgenda extends javax.swing.JPanel {
         jbtn_ultimo = new javax.swing.JButton();
         jl_telefono = new javax.swing.JLabel();
         jtf_telefono = new javax.swing.JTextField();
+        jbtn_nuevo = new javax.swing.JButton();
+        jbtn_insertar = new javax.swing.JButton();
+        jbtn_modificar = new javax.swing.JButton();
+        jbtn_eliminar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 204));
 
@@ -53,6 +57,14 @@ public class ViewAgenda extends javax.swing.JPanel {
         jbtn_ultimo.setText(">|");
 
         jl_telefono.setText("Telefono");
+
+        jbtn_nuevo.setText("Nuevo");
+
+        jbtn_insertar.setText("Insertar");
+
+        jbtn_modificar.setText("Modificar ");
+
+        jbtn_eliminar.setText("Eliminar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -73,17 +85,27 @@ public class ViewAgenda extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbtn_primero)
-                .addGap(18, 18, 18)
-                .addComponent(jbtn_anterior)
-                .addGap(87, 87, 87)
-                .addComponent(jbtn_siguiente)
-                .addGap(18, 18, 18)
-                .addComponent(jbtn_ultimo)
-                .addGap(40, 40, 40))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jbtn_primero)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbtn_anterior)
+                        .addGap(87, 87, 87)
+                        .addComponent(jbtn_siguiente)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbtn_ultimo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jbtn_nuevo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jbtn_insertar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jbtn_modificar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jbtn_eliminar)))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,19 +122,29 @@ public class ViewAgenda extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_telefono)
                     .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtn_ultimo)
                     .addComponent(jbtn_siguiente)
                     .addComponent(jbtn_anterior)
                     .addComponent(jbtn_primero))
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtn_nuevo)
+                    .addComponent(jbtn_insertar)
+                    .addComponent(jbtn_modificar)
+                    .addComponent(jbtn_eliminar))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jbtn_anterior;
+    public javax.swing.JButton jbtn_eliminar;
+    public javax.swing.JButton jbtn_insertar;
+    public javax.swing.JButton jbtn_modificar;
+    public javax.swing.JButton jbtn_nuevo;
     public javax.swing.JButton jbtn_primero;
     public javax.swing.JButton jbtn_siguiente;
     public javax.swing.JButton jbtn_ultimo;

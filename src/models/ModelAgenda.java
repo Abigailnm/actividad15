@@ -27,6 +27,7 @@ public class ModelAgenda {
     private String nombre;
     private String email;
     private String telefono;
+    private int id;
 
     public String getNombre() {
         return nombre;
@@ -159,6 +160,70 @@ public class ModelAgenda {
         }
         
     }
+    /**
+     * Método que realiza las siguiente acciones:
+     *  connfirmacion de eliminar 
+     
+     */
+    public void eliRegistro() {
+        try {
+            int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar este registro?", "Borrar", JOptionPane.YES_NO_OPTION);
+            if (respuesta == JOptionPane.YES_OPTION) {
+                id = rs.getInt("id_contacto");
+                st.executeUpdate("DELETE FROM contactos WHERE id_contacto = "+ id +"; ");
+                
+                this.conectarDB();
+                this.moverUltimoRegistro();
+            }
+            else {
+                this.conectarDB();
+                this.moverUltimoRegistro();
+            }
+        }
+        catch(SQLException err) { 
+            JOptionPane.showMessageDialog(null,"Error en metodo eliminar"+err.getMessage()); 
+        }
+    }
+    
 
+    
+    /**
+     * Método para crear un nuevo registro y poder almacenarlo
+     
+     */
+    public void insertarRegistro() {
+        try {
+            nombre = this.getNombre();
+            email = this.getEmail();
+            telefono = this.getTelefono();
+            st.executeUpdate("INSERT INTO contactos (nombre, email, telefono)" + " VALUES ('"+ nombre +"','"+ email +"','"+ telefono +"');");
+            JOptionPane.showMessageDialog(null, "Felicidades registro guardado.");
+            this.conectarDB();
+            this.moverUltimoRegistro();
+        }
+        catch(SQLException err) { 
+            JOptionPane.showMessageDialog(null,"Error "+err.getMessage()); 
+        }
+    }
+    
+    /**
+     * Método para guardar cambios 
+     */
+    public void modiRegistro() {
+        try {
+            id = rs.getInt("id_contacto");
+            nombre = this.getNombre();
+            email = this.getEmail();
+            telefono = this.getTelefono();
+            st.executeUpdate("UPDATE contactos SET nombre = '"+ nombre +"', email = '"+ email +"',telefono = '"+ telefono +"' WHERE id_contacto = "+ id +"; ");
+            JOptionPane.showMessageDialog(null, "Se modifico correctamente el registro.");
+            this.conectarDB();
+            this.moverUltimoRegistro();
+        }
+        catch(SQLException err) { 
+            JOptionPane.showMessageDialog(null,"Error "+err.getMessage()); 
+        }
+    }
+    
     
 }
